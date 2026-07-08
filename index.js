@@ -3,11 +3,13 @@ import { connectDB } from "./src/helper/connectDB.js";
 import { ENV } from "./src/constant/index.js"
 import routers from "./src/routes/index.js";
 import { config } from "dotenv";
+import cors from "cors";
 config()
 connectDB();
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", routers);
 app.get("/", (req, res) => {
