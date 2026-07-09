@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", routers);
-app.get("/health", (req, res) => {
+app.get("/", (req, res) => {
     res.status(200).json({
         status: true,
         message: "healthMate project working properly",
