@@ -32,9 +32,6 @@ const getAllFiles = async (userId) => {
         .sort({ createdAt: -1 });
 };
 
-
-// const getAllFiles = async (condition) => await FileModel.find(condition);
-
 // // UPDATE File Metadata (e.g., Title)
 // exports.updateFile = async (req, res) => {
 //   try {
@@ -66,7 +63,6 @@ const deleteFile = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 
 export {
   addFile,
